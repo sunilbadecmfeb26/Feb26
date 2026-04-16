@@ -1,0 +1,799 @@
+1. What is Java?
+Ans: Java is a high level, object-oriented programming language used to build applications.
+
+2. Is Java platform dependent or independent? 
+Ans: It is Platform Independent.
+
+3. What is JVM? 
+Ans: JVM (Java Virtual Machine) executes Java bytecode and makes Java platform independent.
+
+4. What is JDK and JRE? 
+Ans:	JDK = Development kit (compiler + tools)
+	JRE = Runtime environment (JVM + libraries)
+
+5. Why is Java called “Write Once, Run Anywhere”? 
+Ans: Because compiled code (bytecode) runs on any system with JVM.
+
+6. What is a class in Java? 
+Ans: A class is a blueprint to create objects.
+
+7. What is an object? 
+Ans: An object is an instance of a class.
+
+8. What is the main method in Java? 
+Ans: Entry point of program execution.
+	e.g. public static void main(String[] args).
+
+9. What is the use of System.out.println()?
+Ans: Used to print output on console.
+
+11. What are data types in Java? 
+Ans: Data types define the type of data a variable can store.
+
+12. Give examples of primitive data types. 
+Ans: int, float, double, char, boolean, byte, short, long.
+
+13. What is a variable? 
+Ans: A variable is a container to store data.
+
+14. How do you declare a variable in Java? 
+Ans: int a = 5;
+
+15. What is the difference between int and float? 
+Ans:	int = stores integers (10)
+	float = stores decimal numbers (10.5)
+
+16. What is type casting? 
+Ans: Converting one data type into another.
+
+17. What is the default value of int? 
+Ans: 0.
+
+18. What is a keyword in Java? 
+Ans: Reserved word with special meaning (e.g., int, class)
+
+19. Can we use reserved keywords as variable names? 
+Ans: No.
+
+20. What is the difference between = and ==?
+Ans:	(=) - assignment
+	(==) - comparison
+
+21. What is an if statement? 
+Ans: Used to check condition and execute code.
+
+22. Difference between if and switch? 
+Ans:	if = multiple conditions
+	switch = fixed values
+
+23. What is a loop? 
+Ans: Used to repeat code.
+
+24. Types of loops in Java? 
+Ans: for, while, do-while
+
+25. Difference between for loop and while loop? 
+Ans: 	for → known iterations
+	while → unknown iterations
+
+26. What is break statement? 
+Ans: Terminates loop or switch.
+
+27. What is continue statement?
+Ans: Skips current iteration.
+
+28. What will happen if we don’t write the main method? 
+Ans: Program will compile but not run.
+
+29. Can we run a Java program without class? 
+Ans: No.
+
+30. What happens if we don’t compile a Java program? 
+Ans: It will not run.
+
+31. Can a variable change its data type? 
+Ans: No.
+
+32. What is the size of int in Java? 
+Ans: 4 Bytes (for 32 bits)
+
+33. Why Java does not support pointers directly?
+Ans: For security and simplicity.
+
+
+Problems :
+
+1. Write a Java program to declare variables of all primitive data types and print their 
+values. 
+Ans : class DataTypes {
+
+    public static void main(String[] args) {
+        int a = 10;
+        float b = 5.5f;
+        double c = 10.55;
+        char d = 'A';
+        boolean e = true;
+        byte f = 2;
+        short g = 100;
+        long h = 10000L;
+
+        System.out.println(a+" "+b+" "+c+" "+d+" "+e+" "+f+" "+g+" "+h);
+    }
+}
+
+
+2. Take two numbers (int and double) and perform: 
+  Addition 
+  Division 
+  Type casting result to int 
+Ans : class Calc {
+
+    public static void main(String[] args) {
+        int a = 10;
+        double b = 4;
+
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Division: " + (a / b));
+
+        int result = (int)(a / b);
+        System.out.println("Typecast to int: " + result);
+    }
+}
+
+
+
+3. Write a program to convert: 
+  int → double 
+  double → int 
+Ans : class Convert {
+    public static void main(String[] args) {
+        int a = 10;
+        double b = a; 		// int => double
+
+        double x = 8.5;
+        int y = (int)x; 	// double => int
+
+        System.out.println(b + " " + y);
+    }
+}
+
+
+
+4. Write a program to find ASCII value of a character. 
+Ans : class ASCII {
+
+    public static void main(String[] args) {
+        char ch = 'A';
+        System.out.println((int)ch);
+    }
+}
+
+
+
+5. Take a character input and print: 
+  Next character 
+  Previous character
+Ans : class CharNext {
+    public static void main(String[] args) {
+        char ch = 'A';
+        System.out.println("Next: " + (char)(ch + 1));
+        System.out.println("Prev: " + (char)(ch - 1));
+    }
+}
+
+
+
+6. Write a program to check whether a number is: 
+  Positive 
+  Negative 
+  Zero 
+Ans : class CheckNumber {
+
+    public static void main(String[] args) {
+        
+        int num = -2;
+
+        if (num > 0) {
+            System.out.println("Positive");
+        } 
+        else if (num < 0) {
+            System.out.println("Negative");
+        } 
+        else {
+            System.out.println("Zero");
+        }
+    }
+}
+
+
+
+7. Write a program to find the largest of three numbers. 
+Ans : class LargestOfThree {
+
+    public static void main(String[] args) {
+        
+        int a = 10, b = 15, c = 20;
+
+        if (a >= b && a >= c) {
+            System.out.println("Largest is: " + a);
+        } 
+        else if (b >= a && b >= c) {
+            System.out.println("Largest is: " + b);
+        } 
+        else {
+            System.out.println("Largest is: " + c);
+        }
+    }
+}
+
+
+
+8. Write a program to check whether a year is a leap year. 
+Ans : class LeapYear {
+    public static void main(String[] args) {
+        int year = 2026;
+
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not Leap Year");
+    }
+}
+
+
+
+9. Create a simple calculator using switch: 
+   Input: two numbers + operator 
+   Perform: +, -, *, / 
+Ans : class Calculator {
+
+    public static void main(String[] args) {
+        int a = 10, b = 5;
+        char op = '+';
+
+        switch(op){
+            case '+': System.out.println(a+b); break;
+            case '-': System.out.println(a-b); break;
+            case '*': System.out.println(a*b); break;
+            case '/': System.out.println(a/b); break;
+            default: System.out.println("Invalid");
+        }
+    }
+}
+
+
+
+10. Write a program to check whether a character is: 
+   Vowel or consonant
+Ans : class VowelCheck {
+    public static void main(String[] args) {
+        char ch = 'a';
+
+        if("aeiouAEIOU".indexOf(ch) != -1)
+            System.out.println("Vowel");
+        else
+            System.out.println("Consonant");
+    }
+}
+
+
+
+11. Print numbers from 1 to 50 using: 
+   for loop 
+   while loop 
+Ans : class Numbers {
+
+    public static void main(String[] args) {
+
+        // for loop
+        for(int i=1;i<=50;i++)
+            System.out.print(i+" ");
+
+        System.out.println();
+
+        // while loop
+        int i=1;
+        while(i<=50){
+            System.out.print(i+" ");
+            i++;
+        }
+    }
+}
+
+
+
+12. Write a program to print sum of first N natural numbers. 
+Ans : class SumN {
+
+    public static void main(String[] args) {
+        int n = 5, sum = 0;
+
+        for(int i=1;i<=n;i++)
+            sum += i;
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+
+
+13. Write a program to print multiplication table of a number. 
+Ans : class Table {
+
+    public static void main(String[] args) {
+        int n = 5;
+
+        for(int i=1;i<=10;i++)
+            System.out.println(n + " * " + i + " = " + (n*i));
+    }
+}
+
+
+
+14. Write a program to reverse a number. 
+Ans : class Reverse {
+
+    public static void main(String[] args) {
+        int n = 123, rev = 0;
+
+        while(n>0){
+            rev = rev*10 + n%10;
+            n /= 10;
+        }
+
+        System.out.println("Reverse = " + rev);
+    }
+}
+
+
+
+15. Write a program to count digits in a number. 
+Ans : class CountDigits {
+
+    public static void main(String[] args) {
+        int n = 12345, count = 0;
+
+        while(n>0){
+            count++;
+            n /= 10;
+        }
+
+        System.out.println("Digits = " + count);
+    }
+}
+
+
+
+16. Write a program to check whether a number is palindrome. 
+Ans : class Palindrome {
+
+    public static void main(String[] args) {
+        int n = 121, temp = n, rev = 0;
+
+        while(n>0){
+            rev = rev*10 + n%10;
+            n /= 10;
+        }
+
+        if(temp == rev)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+ 
+
+17. Write a program to find factorial of a number. 
+Ans : class Factorial {
+
+    public static void main(String[] args) {
+        int n = 5, fact = 1;
+
+        for(int i=1;i<=n;i++)
+            fact *= i;
+
+        System.out.println("Factorial = " + fact);
+    }
+}
+
+
+
+18. Write a program to print Fibonacci series up to N terms.
+Ans : class Fibonacci {
+
+    public static void main(String[] args) {
+        int n = 5, a = 0, b = 1;
+
+        for(int i=1;i<=n;i++){
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+
+
+
+19. Print: 
+* 
+** 
+*** 
+**** 
+Ans : class Pattern1 {
+
+    public static void main(String[] args) {
+        for(int i = 1; i <= 4; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+20. Print: 
+1 
+12 
+123 
+1234 
+Ans : class Pattern2 {
+
+    public static void main(String[] args) {
+        for(int i = 1; i <= 4; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+21. Print: 
+**** 
+*** 
+** 
+*
+Ans : class Pattern3 {
+
+    public static void main(String[] args) {
+        for(int i = 4; i >= 1; i--) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+22. Write a program to check whether a number is prime. 
+Ans : class Prime {
+
+    public static void main(String[] args) {
+        int n = 7, flag = 0;
+
+        for(int i=2;i<=n/2;i++){
+            if(n%i==0){ flag=1; break; }
+        }
+
+        if(flag==0) System.out.println("Prime");
+        else System.out.println("Not Prime");
+    }
+}
+
+
+
+23. Write a program to find sum of even and odd numbers separately (1 to N). 
+Ans : class EvenOddSum {
+
+    public static void main(String[] args) {
+        int n=10, even=0, odd=0;
+
+        for(int i=1;i<=n;i++){
+            if(i%2==0) even+=i;
+            else odd+=i;
+        }
+
+        System.out.println("Even=" + even + " Odd=" + odd);
+    }
+}
+
+
+
+24. Write a program to find largest digit in a number. 
+Ans : class LargestDigit {
+
+    public static void main(String[] args) {
+        int n=582, max=0;
+
+        while(n>0){
+            int d=n%10;
+            if(d>max) max=d;
+            n/=10;
+        }
+
+        System.out.println("Largest Digit = " + max);
+    }
+}
+
+
+
+25. Write a program to swap two numbers: 
+   With third variable 
+   Without third variable 
+Ans : class Swap {
+
+    public static void main(String[] args) {
+        int a=5,b=10;
+
+        // with temp
+        int temp=a;
+        a=b;
+        b=temp;
+
+        // without temp
+        a=a+b;
+        b=a-b;
+        a=a-b;
+    }
+}
+
+
+
+26. Write a program to check whether a number is Armstrong.
+Ans : class Armstrong {
+
+    public static void main(String[] args) {
+        int n=153,temp=n,sum=0;
+
+        while(n>0){
+            int d=n%10;
+            sum+=d*d*d;
+            n/=10;
+        }
+
+        if(temp==sum) System.out.println("Armstrong");
+        else System.out.println("Not");
+    }
+}
+
+
+
+27. Take marks of 5 subjects and: 
+  Calculate total 
+  Calculate percentage 
+  Print grade (A/B/C/Fail) 
+Ans : class Grade {
+
+    public static void main(String[] args) {
+        int total=400;
+        double per=total/5.0;
+
+        if(per>=75) System.out.println("A");
+        else if(per>=60) System.out.println("B");
+        else if(per>=40) System.out.println("C");
+        else System.out.println("Fail");
+    }
+}
+
+
+
+28. Take user age and: 
+    Check eligibility for voting 
+Ans : class Voting {
+
+    public static void main(String[] args) {
+        int age=18;
+
+        if(age>=18) System.out.println("Eligible");
+        else System.out.println("Not Eligible");
+    }
+}
+
+
+
+29. Create a menu-driven program: 
+1. Add 
+2. Subtract 
+3. Exit 
+Ans : class Menu {
+
+    public static void main(String[] args) {
+        int choice=1,a=10,b=5;
+
+        switch(choice){
+            case 1: System.out.println(a+b); break;
+            case 2: System.out.println(a-b); break;
+            case 3: System.exit(0);
+        }
+    }
+}
+
+
+
+30. Take a number and print its table until user stops (use loop).
+Ans : class TableLoop {
+
+    public static void main(String[] args) {
+        int n=5;
+
+        for(int i=1;i<=10;i++)
+            System.out.println(n*i);
+    }
+}
+
+
+
+31. Fix the error: 
+int x; 
+System.out.println(x); 
+Ans : class Fix {
+
+    public static void main(String[] args) {
+        int x = 0;   // initialized
+        System.out.println(x);
+    }
+}
+
+
+
+32. Fix: 
+if(x = 10){ 
+System.out.println("Hello"); 
+} 
+Ans : class Fix1 {
+
+    public static void main(String[] args) {
+        int x = 10;
+
+        if(x == 10){
+            System.out.println("Hello");
+        }
+    }
+}
+
+
+
+33. Fix infinite loop: 
+while(i < 10){ 
+System.out.println(i); 
+} 
+Ans : class Fix2 {
+
+    public static void main(String[] args) {
+        int i = 0;
+
+        while(i < 10){
+            System.out.println(i);
+            i++;   // increment added
+        }
+    }
+}
+
+
+
+34. Print all prime numbers between 1 to 100. 
+Ans : class Prime1To100 {
+
+    public static void main(String[] args) {
+
+        for(int i = 2; i <= 100; i++) {
+            int flag = 0;
+
+            for(int j = 2; j <= i / 2; j++) {
+                if(i % j == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if(flag == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+
+
+35. Find GCD of two numbers. 
+Ans : class GCD {
+
+    public static void main(String[] args) {
+
+        int a = 12, b = 18;
+
+        while(b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        System.out.println("GCD = " + a);
+    }
+}
+
+
+
+36. Find LCM of two numbers. 
+Ans : class LCM {
+
+    public static void main(String[] args) {
+
+        int a = 12, b = 18;
+        int x = a, y = b;
+
+        // find GCD
+        while(b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        int gcd = a;
+        int lcm = (x * y) / gcd;
+
+        System.out.println("LCM = " + lcm);
+    }
+}
+
+
+
+37. Check whether a number is perfect number. 
+Ans : class PerfectNumber {
+
+    public static void main(String[] args) {
+
+        int n = 6;
+        int sum = 0;
+
+        for(int i = 1; i < n; i++) {
+            if(n % i == 0) {
+                sum += i;
+            }
+        }
+
+        if(sum == n)
+            System.out.println("Perfect Number");
+        else
+            System.out.println("Not Perfect Number");
+    }
+}
+
+
+
+38. Create a number guessing game.
+Ans : import java.util.Scanner;
+
+class GuessGame {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int number = 7;   // fixed number
+        int guess;
+
+        System.out.println("Guess a number between 1 to 10:");
+
+        guess = sc.nextInt();
+
+        if(guess == number) {
+            System.out.println("Correct Guess!");
+        } 
+        else if(guess > number) {
+            System.out.println("Too High!");
+        } 
+        else {
+            System.out.println("Too Low!");
+        }
+    }
+}
+
+
+
